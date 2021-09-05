@@ -1,0 +1,287 @@
+$color_body: #f4f6f9;
+$color_text1: #FFFFFF;
+$color_text2: #000000;
+/*{
+     list-style: none;
+     text-decoration: none;
+ }*/
+
+body{
+     margin: 0;
+     font-family: 'Muli', sans-serif;
+     background-color: $color_body;
+     box-sizing: border-box;
+}
+
+.header{
+     background-color: #273057;
+     align-items: center;
+     display: flex;
+     height: 50px;
+     justify-content: space-between;
+     top: 0px;
+     width: 100%;
+}
+
+.header__logo--img{
+     margin-left: 10px;
+     width: 200px;
+     height: 50px;
+}
+
+.header__logo--icon {
+     padding: 5px 0px 0px 0px;
+     margin-left: 10px;
+}
+
+.header__menu {
+     margin-right: 30px;
+}
+
+.header__menu ul {
+     display: none;
+     list-style: none;
+     padding: 0px 0px 0px 5px;
+     position: absolute;
+     min-width: 133px;
+     text-align: left;
+     margin: 0px 0px 0px -14px;
+     background-color: #273057;
+     border-radius: 0px 0px 0px 10px;
+     box-shadow: 0 14px 28px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.22);
+}
+
+.header__menu:hover ul, ul:hover {
+     display: block;
+}
+
+.header__menu li {
+     margin: 10px 0px;
+}
+
+.header__menu li a {
+     text-decoration: none;
+     color: $color_text1;
+}
+
+.header__menu li a:hover {
+     text-decoration: underline;
+}
+   
+.header__menu--profile {
+     margin-right: 8px;
+     display: flex;
+     align-items: center;
+}
+   
+.header__menu--profile img {
+     margin-right: 8px;
+     width: 40px;
+     display: flex;
+}
+
+.header__menu--profile p {
+     margin: 0px;
+     color: white;
+}
+
+.input{
+     background-color: transparent;
+     border-top: 0px;
+     border-right: 0px;
+     border-left: 0px;
+     border-bottom: 2px solid white;
+     padding: 10px;
+     font-size: 16px;
+     font-family: 'Muli', sans-serif;
+     margin-bottom: 20px;
+     padding: 0px 20px;
+     outline: none;
+     height: 50px;
+}
+::placeholder{
+     color: white;
+}
+.button{
+     color: white;
+     background-color: rgba(255, 255, 255, 0.5);
+     height: 50px;
+     border-radius: 25px;
+     border: 0;
+     outline: none;
+     font-size: 16px;
+     font-weight: bold;
+     font-family: 'Muli', sans-serif;
+     cursor: pointer;
+     letter-spacing: 1px;
+     margin: 10px 0px;
+}
+
+.footer{
+     background-color: #fff;
+     border-top: 1px solid #dee2e6;
+     color: #869099;
+     display: flex;
+     flex-direction: row;
+     font-size: 0.8rem;
+     padding: 1rem;
+     text-align: right;
+     font-weight: bold;
+     height: 18px;
+     justify-content: flex-end;
+}
+.footer a{
+     color: #007bff;
+     cursor: pointer;
+     padding-left: 5px;
+     text-decoration: none;
+}
+.footer a:hover{
+     text-decoration: underline;
+}
+
+@media only screen and (max-width: 600px){
+     
+     .menu {
+          display: block;
+          position: absolute;
+     }
+     
+     input#abrir-cerrar:checked ~ .menu {
+          width:250px;
+          display:block;
+     }
+     
+     .main{
+          background-color: #CCCCCC;
+          height: calc(100vh - 133px);
+          width: 100vh;
+     }
+     
+
+}
+
+@media only screen and (min-width: 601px){
+     input#abrir-cerrar:checked ~ .main {
+          width: calc(100vw - 250px);
+     }
+}
+.container{
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+     
+}
+/*
+.menu{
+     /*align-items: center;
+     display: flex;
+     justify-content: space-between;* /
+     background-color: #343a40;
+     height: calc(100vh - 101px);
+     top: 0px;
+     width: 250px;
+     box-shadow: 0 14px 28px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.22);
+}*/
+
+.main{
+     background-color: #CCCCCC;
+     height: calc(100vh - 101px);
+     width: 100vw;
+}
+     
+
+input#abrir-cerrar {
+     visibility:hidden;
+     position: absolute;
+     top: -9999px;
+}
+
+label[for="abrir-cerrar"] {
+     cursor: pointer;
+     color:#fff;
+     display:flex;
+     font-size: 2rem;
+}
+
+
+input#abrir-cerrar:checked ~ .menu {
+     width:250px;
+}
+
+input#abrir-cerrar:checked + label[for="abrir-cerrar"], input#abrir-cerrar:checked ~ .main {
+     transition: width 1s;
+}
+
+.menu {
+     height: calc(100vh - 101px);
+     width: 0;
+     z-index: 1;
+     background-color: #343a40;
+     overflow-x: hidden;
+     overflow-y: auto;
+     transition: 1s;
+     box-sizing:border-box;
+     white-space: nowrap;
+}
+
+.menu ul, .menu li{
+     list-style: none;
+}
+
+.menu ul {
+     padding:0;
+     margin: 10px 0px 0px 10px;
+     display: block;
+     width: 90%;
+}
+
+.menu li {
+     display: block;
+     font-size: 1.2rem;
+     color: #c2c7d0;
+     padding: 5px 0px;
+     border-radius: 5px;
+}
+
+.menu__item a {
+     color: inherit;
+}
+
+.menu li:hover{
+     color: #fff;
+     background-color: rgba(255,255,255,.1);
+}
+
+.main {
+     transition: margin-left 1s;
+}
+
+.abrir-cerrar {
+     color: #2E88C7;
+     font-size:1rem;   
+}
+
+.menu__item--active{
+     background-color: #007bff;
+     color: #fff;
+}
+
+.menu__item--active a {
+     color: #fff;
+}
+
+.menu__item--link{
+     text-decoration: none;
+     color: #c2c7d0;
+}
+
+.menu__item--icon{
+     margin-left: 5px;
+}
+
+.menu__item--active .menu__item--icon{
+     color: #fff;
+}
+
+
