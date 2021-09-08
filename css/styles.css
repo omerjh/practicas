@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*{
      list-style: none;
      text-decoration: none;
@@ -90,12 +91,8 @@ h2 {
           align-items: center;
 }
 
-.header__menu--profile img {
+.header__menu--profile i {
   margin-right: 8px;
-  width: 40px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 .header__menu--profile p {
@@ -153,6 +150,8 @@ h2 {
 @media only screen and (min-width: 601px) {
   input#abrir-cerrar:checked ~ .main {
     width: calc(100vw - 250px);
+    display: -ms-grid;
+    display: grid;
   }
 }
 
@@ -184,11 +183,12 @@ h2 {
   background-color: #CCCCCC;
   height: calc(100vh - 101px);
   width: 100vw;
+  overflow-y: scroll;
 }
 
 .main__header {
   padding: 5px 0px 0px 5px;
-  width: 100vw;
+  width: 90%ACTO;
 }
 
 input#abrir-cerrar {
@@ -288,32 +288,36 @@ input#abrir-cerrar:checked + label[for="abrir-cerrar"], input#abrir-cerrar:check
   color: #fff;
 }
 
-.login {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+.card {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  padding: 0px 30px;
-  min-height: calc(100vh -200px);
+  display: -ms-inline-grid;
+  display: inline-grid;
+  background-color: #edf2fb;
+  border: 3px solid #c1d3fe;
+  justify-items: center;
+  -webkit-padding-start: 10px;
+          padding-inline-start: 10px;
+  -webkit-padding-end: 10px;
+          padding-inline-end: 10px;
+  margin-left: 5px;
 }
 
-.login__container {
-  background-color: rgba(255, 255, 255, 0.1);
-  border: 2px solid white;
-  border-radius: 40px;
-  color: white;
-  padding: 60px 68px 40px;
-  min-height: 700px;
-  width: 300px;
+.card__header {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  margin-top: 5px;
+}
+
+.card__img {
+  margin-bottom: 10px;
+  width: 100px;
+}
+
+.card__form {
+  -ms-flex-line-pack: center;
+      align-content: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -321,69 +325,65 @@ input#abrir-cerrar:checked + label[for="abrir-cerrar"], input#abrir-cerrar:check
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-shadow: 0px 0px 50px 0px #9aee97;
-          box-shadow: 0px 0px 50px 0px #9aee97;
+  gap: 5px;
+  margin-bottom: 30px;
 }
 
-.login__container--form {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+.card__form label {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.2rem;
 }
 
-.login__container--form label {
-  font-size: 14px;
-}
-
-.input {
+.card__form input {
+  padding: 5px;
+  font-size: 1.1rem;
   background-color: transparent;
   border-top: 0px;
   border-right: 0px;
   border-left: 0px;
-  border-bottom: 2px solid white;
-  padding: 10px;
-  font-size: 16px;
-  font-family: 'Muli', sans-serif;
-  margin-bottom: 20px;
-  padding: 0px 20px;
+  border-bottom: 2px solid #000000;
   outline: none;
-  height: 50px;
 }
 
-::-webkit-input-placeholder {
-  color: white;
+.card__form button {
+  background-color: rgba(178, 218, 250, 0.8);
+  border: 2px solid #abc4ff;
+  font-size: 1rem;
+  padding: 5px 30px;
 }
 
-:-ms-input-placeholder {
-  color: white;
+/* Tamaño del scroll */
+.main::-webkit-scrollbar {
+  width: 8px;
 }
 
-::-ms-input-placeholder {
-  color: white;
+/* Estilos barra (thumb) de scroll */
+.main::-webkit-scrollbar-thumb {
+  background: #383838;
+  border-radius: 5px;
 }
 
-::placeholder {
-  color: white;
+.main::-webkit-scrollbar-thumb:active {
+  background-color: #999999;
 }
 
-.button {
-  color: white;
-  background-color: rgba(255, 255, 255, 0.5);
-  height: 50px;
-  border-radius: 25px;
-  border: 0;
-  outline: none;
-  font-size: 16px;
-  font-weight: bold;
-  font-family: 'Muli', sans-serif;
-  cursor: pointer;
-  letter-spacing: 1px;
-  margin: 10px 0px;
+.main::-webkit-scrollbar-thumb:hover {
+  background: #2f4f4f;
+  -webkit-box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos track de scroll */
+.main::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 4px;
+}
+
+.main::-webkit-scrollbar-track:hover,
+.main::-webkit-scrollbar-track:active {
+  background: #dadab5;
 }
 /*# sourceMappingURL=styles.css.map */
