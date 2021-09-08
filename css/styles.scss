@@ -272,6 +272,7 @@ input#abrir-cerrar:checked + label[for="abrir-cerrar"], input#abrir-cerrar:check
     padding-inline-start: 10px;
     padding-inline-end: 10px;
     margin-left: 5px;
+    min-width: 270px;
 }
 
 .card__header{
