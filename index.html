@@ -6,7 +6,8 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet"> 
      <link href="./css/styles.css" rel="stylesheet"> 
-     <link href="./assets/fontawesome/css/all.min.css" rel="stylesheet"> 
+     <link href="./assets/fontawesome/css/all.min.css" rel="stylesheet">
+
      <title>Práctica</title>
 </head>
 <body>
@@ -18,7 +19,7 @@
         </label>
         <div class="header__menu">
             <div class="header__menu--profile">
-                <img src="./assets/user-icon.png" alt="">
+                <i class="fas fa-user"></i>
                 <p>Perfil</p>
             </div>
             <ul>
@@ -29,7 +30,7 @@
     </header>
     
     <section class="container">
-        <input type="checkbox" id="abrir-cerrar" name="abrir-cerrar" value="" checked="checked">
+        <input type="checkbox" id="abrir-cerrar" name="abrir-cerrar" value=""  ><!--checked="checked"-->
         <section class="menu">
             <ul class="menu__container">
                 <li class="menu__item--active">
@@ -58,16 +59,31 @@
         <section class="main">
             <section class="main__header">
                 <h2>Figuras geométricas</h2>
+                <p>Este es el primer taller del curso práctico de JavaScript</p>
             </section>
 
-            <section class="main__container">
-                <form action="" class="main__container--form">
-                    <input type="text" class="input" placeholder="Correo">
-                    <input type="password" class="input" placeholder="Contraseña">
-                    <button class="button">Iniciar Sesión</button>
+            <section class="card">
+                <h3 class="card__header">Cuadrado</h3>
+                <img class="card__img" src="./assets/cuadrado.png" alt="Cuadrado">
+                <form action="" class="card__form">
+                    <label for="ladoCuadrado">Ingresa el tamaño de un lado</label>
+                    <input type="number" name="ladoCuadrado" id="ladoCuadrado" placeholder="Lado">
+                    <button type="button" name="btnCalcularPerimetroCuadrado" id="btnCalcularPerimetroCuadrado" >Calcular Perímetro</button>
+                    <button type="button" name="btnCalcularAreaCuadrado" id="btnCalcularAreaCuadrado" >Calcular Área</button>
                 </form>
             </section>
         
+            <section class="card">
+                <h3 class="card__header">Cuadrado</h3>
+                <img class="card__img" src="./assets/cuadrado.png" alt="Cuadrado">
+                <form action="" class="card__form">
+                    <label for="ladoCuadrado2">Ingresa el tamaño de cada lado</label>
+                    <input type="number" name="ladoCuadrado2" id="ladoCuadrado2" placeholder="Lado">
+                    <button type="button">Calcular</button>
+                </form>
+            </section>
+            
+            <div id="mensaje"></div>
         </section>
     </section>
     
@@ -75,9 +91,6 @@
         Diseñado por
         <a href="https://github.com/omerjh" target="_blank">Omer Hernández</a>
    </footer>
-
-
-
-
+   <script src="./js/figuras.js"></script>
 </body>
 </html>
